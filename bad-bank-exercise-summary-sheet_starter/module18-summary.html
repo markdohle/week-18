@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Bad Bank Exercise</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+  <div class="container">
+    <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px">
+    <h1 class="header-text">Bad Bank Exercise</h1>
+  </div>
+  <p>Please review the concepts covered this week.</p>
+
+  <h2 id="information-architecture">Information Architecture</h2>
+    <p>
+        In software development, information architecture refers to how information flows throughout your software from file to
+        file as well as how the files are structured. It also refers to what data is shared between the files using modularity and 
+        context. Here is an example of how the basic structure, or information architecture of the "Bad Bank" exercise is designed: 
+    </p>
+    <img src="information-architecture.png" alt="Information Architecture Diagram" width=400px>
+  <h2 id="routing">Routing</h2>
+    <p>
+        In the old days, when you clicked on a link on a webpage, it would often result in a process like this: </p>
+      <ul>
+        <li>The web browser would make a request to an external server for the new content </li>
+        <li>The server would retrieve it from a database</li>
+        <li>The server would give that information back to the web browser </li>
+      </ul>
+    <p>
+        Although it worked, there was room for improvement. Now, single-page applications, built with libraries like React, are used much more commonly, on which the 
+        data is cached (stored) on the browser. Links still map to separate pages in the application, but since the data is stored on the browser,
+        the need to ask the server for the data is eliminated, and the pages load much faster. 
+    </p>
+
+    <h2 id="context">Context</h2>
+<p>
+    Context provides a way to pass data through a component tree, such as from an index.js file, without having to pass properties down manually at every level.  
+    In the "Bad Bank" example, Dr. Sanchez created a &quot;user&quot; context that would allow a user to share authenticated data in every piece of the application.  
+    Now, a user can navigate through several different sections of an application, without having to log in each time they go to a new page.  
+    To learn more, review the <a href="https://reactjs.org/docs/context.html">React documentation</a> on context.
+</p>
+
+<p class="footer">
+  © MIT xPRO 2020. All rights reserved.
+</p>
+
+</body>
+
+</html>
