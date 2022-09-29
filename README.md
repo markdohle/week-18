@@ -131,11 +131,12 @@ Shared Context: Variable in the index.js that is shared by the other child compo
 
 The tag will initialize a value of a simple object that holds information accessed from the child components. The users['peter'] is an object that holds a list of users. It is initialized with peter. The tag will wrap the routes.
 
-```<UserContext.Provider value="{{users:['peter']}}">
+```
+    <UserContext.Provider value="{{users:['peter']}}">
       
       <!--Enter Routes Here-->
    
-   </UserContext.Provier>
+    </UserContext.Provier>
 ```
 2. Access the context from child components(Home,About,Products). Create a variable(ctx) within the body of the functional component useing react to handle the shared context from index.js. The variable is an object.
 
