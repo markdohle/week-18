@@ -29,7 +29,7 @@ What is an API? How do I switch to a new API that works with React 18? Does it m
 react_devtools_backend.js:4026 Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
 ```
 
-### Video 18-1
+### Video 18.1
 
 How do I provide a memory context for all of our screens? How do I set the context?
 
@@ -43,7 +43,7 @@ How do I build create account?
 
 What are my design priciples? Encapsulation and modularity
 
-### Video 18-2: Routing Basics
+### Video 18.2: Routing Basics
 
 Routing is a core component of building sites. It makes navigation faster, almost instant.
 
@@ -118,6 +118,41 @@ Why does the order of the script component files matter? If the index.js is list
 <!-- Load Babel in the head-->
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 ```
+
+### Video 18.3 Context Basics
+
+Extend the functionality of the SPA by adding a shared context for all the components with the index.js file.
+
+Shared Context: Variable in the index.js that is shared by the other child components.
+
+1. UserContext variable. Variable needs an initial condition and tag returned by the Spa() component.
+
+```React.createContext(null);```
+
+The tag will initialize a value of a simple object that holds information accessed from the child components. The users['peter'] is an object that holds a list of users. It is initialized with peter. The tag will wrap the routes.
+
+```<UserContext.Provider value="{{users:['peter']}}">
+      
+      <!--Enter Routes Here-->
+   
+   </UserContext.Provier>
+```
+2. Access the context from child components(Home,About,Products). Create a variable(ctx) within the body of the functional component useing react to handle the shared context from index.js. The variable is an object.
+
+```React.useContext(UserContext);```
+
+Inside the div tag, return a string of the variable that handles the shared context. Reference the users.
+
+```(JSON.stringify(ctx.users))
+
+3. Add users to the shared context. Everytime the Products component is loaded, a user is added to the context. Push users into the variable that handles the shared context and creates a random string. Inside the div tag, return a string of the variable that handles the shared context. Reference the users. Everytime Products link is clicked, a new user is added to all the child components that reference the shared context. Add counters to see how many times each page is clicked on.
+
+```ctx.users.push(Math.random().toString(36).substr(2, 5));```
+
+
+
+
+
 
 
 
