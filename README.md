@@ -146,9 +146,11 @@ Inside the div tag, return a string of the variable that handles the shared cont
 
 ```{JSON.stringify(ctx.users)}```
 
-3. Add users to the shared context. Everytime the Products component is loaded, a user is added to the context. Push users into the variable that handles the shared context and creates a random string. Inside the div tag, return a string of the variable that handles the shared context. Reference the users. Everytime Products link is clicked, a new user is added to all the child components that reference the shared context. Add counters to see how many times each page is clicked on.
+3. Add users to the shared context. Everytime the Products component is loaded, a user is added to the context. Push users into the variable that handles the shared context and creates a random string. Inside the div tag, return a string of the variable that handles the shared context. Reference the users. Everytime Products link is clicked, a new user is added to all the child components that reference the shared context.
 
 ```ctx.users.push(Math.random().toString(36).substr(2, 5));```
+
+4. How do you add a counter to track clicks on a link? I tried useState, but received errors. This is unresolved for now. Come back to it later.
 
 
 
