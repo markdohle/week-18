@@ -60,7 +60,9 @@ How do I load components?
   const Link       = ReactRouterDOM.Link;
   const HashRouter = ReactRouterDOM.HashRouter;
   ```
-  Add return tags: HashRouter and define the path for links to all the child components. Include a horizontal rule to separate content at the top of the page from where the components are loaded. Map the path for each component. Use ```--```to separate the links when there are no styles defined. Finally, load the Spa component into root so that it lands in the html.
+Add return tags: HashRouter and define the path for links to all the child components. Include a horizontal rule to separate content at the top of the page from where the components are loaded. Map the path for each component. Use ```--```to separate the links when there are no styles defined. Finally, load the Spa component into root so that it lands in the html.
+
+Why does the Home component stay when I click on the about link? It has to do with the path being defined with "exact".
   ```
   <HashRouter>
   <div>
@@ -69,7 +71,7 @@ How do I load components?
     <Link to="/about/">About      </Link> --
     <Link to="/products">Products </Link>
     <hr/>
-    <Route path="/"           component={Home}    /> 
+    <Route path="/" exact     component={Home}    /> 
     <Route path="/about/"     component={About}   />
     <Route path="/products/"  component={Products}/>
    </div>
@@ -86,7 +88,7 @@ How do I load components?
 4. Products component. Return a div with a header only to see that is works.
 5. index.html.
 
-Why does the order of the script component files matter? If I change the order of the list I get an error.
+Why does the order of the script component files matter? If I change the order of the list I get an error. If the script order is the same as the order of the Links and Paths, then the error goes away.
 
 ```Uncaught ReferenceError: Home is not defined```
 
