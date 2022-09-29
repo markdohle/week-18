@@ -21,6 +21,14 @@ In Module 18: Bad Bank Exercise, you’ll learn how to build the front end of a 
 
 [Replacing Redux With React Hooks And Context](https://medium.com/octopus-labs-london/replacing-redux-with-react-hooks-and-context-part-1-11b72ffdb533)
 
+## My Bugs
+
+What is an API? How do I switch to a new API that works with React 18? Does it matter?
+
+```
+react_devtools_backend.js:4026 Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+```
+
 ### Video 18-1
 
 How do I provide a memory context for all of our screens? How do I set the context?
