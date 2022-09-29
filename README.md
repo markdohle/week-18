@@ -93,7 +93,7 @@ Why does the order of the script component files matter? If the index.js is list
 ```Uncaught ReferenceError: Home is not defined```
 
 ```
-    <!-- Load react components -->
+    <!-- Load react components in the body-->
     <script src="products.js" defer type="text/babel"></script>
     <script src="index.js" defer type="text/babel"></script>
     <script src="home.js" defer type="text/babel"></script>
