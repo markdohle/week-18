@@ -84,6 +84,30 @@ How do I load components?
 2. Home component. Return a div with a header only to see that is works.
 3. About component. Return a div with a header only to see that is works.
 4. Products component. Return a div with a header only to see that is works.
+5. index.html.
+
+Why does the order of the script files matter? If I change the order of the list I get an error.
+
+```Uncaught ReferenceError: Home is not defined```
+
+```
+    <!-- Load react components -->
+    <script src="products.js" defer type="text/babel"></script>
+    <script src="index.js" defer type="text/babel"></script>
+    <script src="home.js" defer type="text/babel"></script>
+    <script src="about.js" defer type="text/babel"></script>
+```
+```
+<!-- Load React Libraries in the body. Not for production -->
+    <script src="https://unpkg.com/react/umd/react.development.js"                      crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"              crossorigin></script>
+    <script src="https://unpkg.com/react-router@5.2.1/umd/react-router.min.js"          crossorigin></script>
+    <script src="https://unpkg.com/react-router-dom@5.2.1/umd/react-router-dom.min.js"  crossorigin></script>
+```
+```
+<!-- Load Babel in the head-->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+```
 
 
 
