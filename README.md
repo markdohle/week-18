@@ -144,7 +144,7 @@ The tag will initialize a value of a simple object that holds information access
 
 Inside the div tag, return a string of the variable that handles the shared context. Reference the users.
 
-```(JSON.stringify(ctx.users))
+```(JSON.stringify(ctx.users))```
 
 3. Add users to the shared context. Everytime the Products component is loaded, a user is added to the context. Push users into the variable that handles the shared context and creates a random string. Inside the div tag, return a string of the variable that handles the shared context. Reference the users. Everytime Products link is clicked, a new user is added to all the child components that reference the shared context. Add counters to see how many times each page is clicked on.
 
