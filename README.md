@@ -132,7 +132,7 @@ Shared Context: Variable in the index.js that is shared by the other child compo
 The tag will initialize a value of a simple object that holds information accessed from the child components. The users['peter'] is an object that holds a list of users. It is initialized with peter. The tag will wrap the routes.
 
 ```
-    <UserContext.Provider value="{{users:['peter']}}">
+    <UserContext.Provider value={{users:['peter']}}>
       
       <!--Enter Routes Here-->
    
