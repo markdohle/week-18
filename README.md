@@ -86,7 +86,7 @@ How do I load components?
 4. Products component. Return a div with a header only to see that is works.
 5. index.html.
 
-Why does the order of the script files matter? If I change the order of the list I get an error.
+Why does the order of the script component files matter? If I change the order of the list I get an error.
 
 ```Uncaught ReferenceError: Home is not defined```
 
