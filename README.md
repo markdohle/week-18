@@ -56,24 +56,24 @@ How do I load components?
 
 1. Spa component. Single-Page-Application(SPA) in the index.js
   ```
-  const Route = ReactRouterDOM.Route
-  const Link = ReactRouterDOM.Link
-  const HashRouter = ReactRouterDOM.HashRouter
+  const Route      = ReactRouterDOM.Route;
+  const Link       = ReactRouterDOM.Link;
+  const HashRouter = ReactRouterDOM.HashRouter;
   ```
   Add return tags: HashRouter and define the path for links to all the child components. Include a horizontal rule to separate content at the top of the page from where the components are loaded. Map the path for each component. Use ```--```to separate the links when there are no styles defined. Finally, load the Spa component into root so that it lands in the html.
   ```
   <HashRouter>
   <div>
     <h1>Routing - Hello World</h1>
-    <Link to="/">Home</Link> --
-    <Link to="/about/">About</Link> --
-    <Link to="/products">Products</Link>
+    <Link to="/">Home             </Link> --
+    <Link to="/about/">About      </Link> --
+    <Link to="/products">Products </Link>
     <hr/>
-    <Route path="/"           component={Home}     /> 
-    <Route path="/about/"     component={About}    />
+    <Route path="/"           component={Home}    /> 
+    <Route path="/about/"     component={About}   />
     <Route path="/products/"  component={Products}/>
    </div>
-   </HashRouter
+   </HashRouter>
    ```
    ```
    ReactDom.render(
