@@ -79,8 +79,8 @@ How do I load components?
    ReactDom.render(
       <Spa/>,
       document.getElementById('root')
-    )
-    ```
+   )
+   ```
 2. Home component. Return a div with a header only to see that is works.
 3. About component. Return a div with a header only to see that is works.
 4. Products component. Return a div with a header only to see that is works.
