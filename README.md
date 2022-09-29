@@ -88,7 +88,7 @@ Why does the Home component stay when I click on the about link? It has to do wi
 4. Products component. Return a div with a header only to see that is works.
 5. index.html.
 
-Why does the order of the script component files matter? If I change the order of the list I get an error. If the script order is the same as the order of the Links and Paths, then the error goes away.
+Why does the order of the script component files matter? If the index.js is listed last, then no error. Otherwise, the index.js not last and there is an error. If you paste the files in the order below, then you get the error.
 
 ```Uncaught ReferenceError: Home is not defined```
 
