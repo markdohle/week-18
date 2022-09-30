@@ -167,7 +167,7 @@ Style the Navigation link. Add Bootsrap, which is a reference to a script, in a 
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
 ```
-2. Add navbar.js script to the html body. 
+2. Add nav.js script to the html body. 
 
 ```<script src="nav.js" defer type="text/babel"></script>```
 
