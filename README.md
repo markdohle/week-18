@@ -156,7 +156,7 @@ Inside the div tag, return a string of the variable that handles the shared cont
 
 ### Video 18.4 - Style Basics
 
-Style the Navigation link. Add Bootsrap, which is a reference to a script, in a component in nav.js. This will replace the Navbar script in index.js.
+Style the Navigation link. Add Bootsrap, which is a reference to a script in index.html. Use bootstrap in the Nav component. This will replace the Navbar script in index.js.
 
 1. Add Bootstrap to html head.
 
