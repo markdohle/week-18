@@ -121,6 +121,8 @@ Why does the order of the script component files matter? If the index.js is list
 
 ### Video 18.3 Context Basics
 
+Context allows you to share values by making the data global to the application. This means you don't have to pass data through each level of the component tree. It makes component reuse more difficult, so it is not always the best choice. It should only be used when data needs to be used by many components at different nested levels.
+
 Extend the functionality of the SPA by adding a shared context for all the components with the index.js file.
 
 Shared Context: Variable in the index.js that is shared by the other child components.
@@ -151,6 +153,60 @@ Inside the div tag, return a string of the variable that handles the shared cont
 ```ctx.users.push(Math.random().toString(36).substr(2, 5));```
 
 4. How do you add a counter to track clicks on a link? I tried useState, but received errors. This is unresolved for now. Come back to it later.
+
+### Video 18.4 - Style Basics
+
+Style the Navigation link. Add Bootsrap, which is a reference to a script, in a component in nav.js. This will replace the Navbar script in index.js.
+
+1. Add Bootstrap to html head.
+
+```
+<!-- bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+```
+2. Add navbar.js script to the html body. 
+
+```<script src="nav.js" defer type="text/babel"></script>```
+
+3. Goto Bootstrap "Navs" to copy your navbar script. Then change class to className because class a reserved keyword. The className property sets or returns an element's class attribute.(w3) The className property of the Element interface gets and sets the value of the class attribute of the specified element.(MDN)
+
+1. Write a function for the component ```Nav``` and return tags. Start with the unordered list and add list items with the links to all the components. Take advantage of the react Link variable that you created in the Spa component.
+
+```
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+```
+
+Change ```class``` to ```className```
+
+Change ```<a class="nav-link active" href="#">Active</a>``` to ```<Link className="nav-link" to="/">Home</Link>```
+
+2. Replace the Links inside index.js with the Nav component. Is this refactoring?
+
+```
+{/* --- navigation bar --- */}
+<Nav/>
+```
+3. The Spa component uses Link as a local variable. It is not available to the Nav component. Move the variables from inside the Spa function to outside of it in order make them globally accesable.
+
+
+
+
 
 
 
