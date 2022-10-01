@@ -26,7 +26,9 @@ In Module 18: Bad Bank Exercise, you’ll learn how to build the front end of a 
 What is an API? How do I switch to a new API that works with React 18? Does it matter?
 
 ```
+
 react_devtools_backend.js:4026 Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API, your app will behave as if it's running React 17. Learn more: https://reactjs.org/link/switch-to-createroot
+
 ```
 
 Does the order of the script files referenced in the .html file matter? I get this error when the navbar.js is listed below the index.js. F*****g annoying.
