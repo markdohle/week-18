@@ -31,7 +31,7 @@ Use createRoot instead. Until you switch to the new API, your app will behave as
 Learn more: https://reactjs.org/link/switch-to-createroot
 ```
 
-Does the order of the script files referenced in the .html file matter? I get this error when the navbar.js is listed below the index.js. **_F*****g annoying_**, emphasis added because it keeps happening and need to remember this.
+Does the order of the script files referenced in the .html file matter? I get this error when the navbar.js is listed below the index.js. _F*****g annoying_, emphasis added because it keeps happening and need to remember this.
 
 ```Uncaught ReferenceError: NavBar is not defined```
 
