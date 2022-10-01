@@ -253,7 +253,7 @@ Add script references for the 10 script files that will be created next.
 
 Video 18.7 - Band Bank Navigation Bar
 
-1. Create the navbar fuctional component with return tags. Wrap the paths in fragment, which is an empty tag.
+1. Create the navbar fuctional component with return tags. Wrap the paths in fragment, which is an empty tag. Why do I need to use the fragment this time, but not in Video 18.2 exercise?
 
 ```
 <>
@@ -262,13 +262,13 @@ Video 18.7 - Band Bank Navigation Bar
 
 2. Enter the links. Why is this different than the links created in (Video 18-2, 1. Spa Component)?
 ```
-    <a href="#">BadBank</a>,
-    <a href="#/CreateAccount/">Create Account</a>,
-    <a href="#/login/">Login</a>,
-    <a href="#/deposit/">Deposit</a>,
-    <a href="#/withdraw/">Withdraw</a>,
-    <a href="#/balance/">Balance</a>,
-    <a href="#/alldata/">AllData</a>
+    <a href="#"                 > Home            </a>,
+    <a href="#/createaccount/"  > Create Account  </a>,
+    <a href="#/login/"          > Login           </a>,
+    <a href="#/deposite/"       > Deposit         </a>,
+    <a href="#/withdrawl/"      > Withdraw        </a>,
+    <a href="#/balance/"        > Balance         </a>,
+    <a href="#/alldata/"        > All Data        </a>
  ```
  
  3. Write the parent component(Spa) in index.js. We are going to write our .jsx. Why is the file still a .js file? Wrap the paths in fragment, which is an empty tag as done in step 1 above. Add a header so we can verify that the page loads. Add a the NavBar component in the same as was performed in (Video 18.4, step 2). Finally, render the Spa component to the DOM in the same way as was done in (Video 18.2, step 1).
@@ -283,7 +283,7 @@ Add the routing components to context.js. Leverage the components in index.js by
 
 3. Add the Rout paths inside the HashRouter tag. The default Route path is ```exact``` and points to the home component. Reference Video 18.2, step 1 for syntax. Add the rest of the NavBar Route path components without ```exact```.
 
-4. Create the components that are routed to the NavBar. Return the h1 tag. This is to verify that the NavBar and routing works.
+4. Create the components that are routed to the NavBar. Return the h1 tag. This is to verify that the NavBar and routing works. Don't forget to wrap in a fragment as shown in 18.7, step 1.
 
 
 
