@@ -279,11 +279,11 @@ Add the routing components to context.js. Leverage the components in index.js by
 
 1. Define the router components in context.js(Reference Video 18.2, step 2). The router components get their logic from the routing library that is already defined in the .html.
 
-2. Return the router components in the Spa component. Wrap the NavBar inside the HashRouter component tag(Reference Video 18.2, step 1 and note that the links have been refactored and defined in the Navbar component.
+2. Return the router components in the Spa component. Wrap the NavBar inside the HashRouter component tag(Reference Video 18.2, step 1) and note that the links have been refactored and defined in the Navbar component.
 
-Add the Rout paths inside the HashRouter tag. The default Route path is ```exact``` and points to the home component. Reference Video 18.2, step 1 for syntax. Add the rest of the NavBar Route path components without ```exact```.
+3. Add the Rout paths inside the HashRouter tag. The default Route path is ```exact``` and points to the home component. Reference Video 18.2, step 1 for syntax. Add the rest of the NavBar Route path components without ```exact```.
 
-3. Create the components that are routed to the NavBar. Return the h1 tag. This is to verify that the NavBar and routing works.
+4. Create the components that are routed to the NavBar. Return the h1 tag. This is to verify that the NavBar and routing works.
 
 
 
