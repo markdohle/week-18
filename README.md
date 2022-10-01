@@ -272,6 +272,18 @@ Video 18.7 - Band Bank Navigation Bar
  ```
  
  3. Write the parent component(Spa) in index.js. We are going to write our .jsx. Why is the file still a .js file? Wrap the paths in fragment, which is an empty tag as done in step 1 above. Add a header so we can verify that the page loads. Add a the NavBar component in the same as was performed in (Video 18.4, step 2). Finally, render the Spa component to the DOM in the same way as was done in (Video 18.2, step 1).
+ 
+### Video 18.7 - Band Bank Routing
+
+Add the routing components to context.js. Leverage the components in index.js by defining the routing paths and mapping to the components.
+
+1. Define the router components in context.js(Reference Video 18.2, step 2). The router components get their logic from the routing library that is already defined in the .html.
+
+2. Return the router components in the Spa component. Wrap the NavBar inside the HashRouter component tag(Reference Video 18.2, step 1 and note that the links have been refactored and defined in the Navbar component.
+
+Add the Rout paths inside the HashRouter tag. The default Route path is ```exact``` and points to the home component. Reference Video 18.2, step 1 for syntax. Add the rest of the NavBar Route path components without ```exact```.
+
+3. Create the components that are routed to the NavBar. Return the h1 tag. This is to verify that the NavBar and routing works.
 
 
 
