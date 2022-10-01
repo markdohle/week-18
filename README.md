@@ -296,6 +296,7 @@ Within context.js, add context to be shared with your components. Then, within i
 2. Add the tag for the UserContext component to index.js. Wrap the routes inside the UserContent component as shown in Video 18.3, step 1. Add the value as an expression{} and paste an object iside the expression. The object is provided below.
 
 Object property = users
+
 Object value = an ararry with one object with a bank user with 4 properties. These properties can be updated.
 
 ```
@@ -311,7 +312,7 @@ Object value = an ararry with one object with a bank user with 4 properties. The
 }
 ```
 
-3. Access the shared content by each of the child components. Create the local variable to capture the context as shown in Video 18.3, step 2. Add the context to the return tag with a line break ```<br/>``` to separate the text of the context from the header text. Why is the JSON.stringify accessing ```ctx``` instead of ```ctx.users``` as shown in Video 18.3, step 2?
+3. Access the shared content by each of the child components. Create the local variable to capture the context as shown in Video 18.3, step 2. Add the context to the return inside the h1 tag with a line break ```<br/>``` to separate the text of the context from the header text. Why is the JSON.stringify accessing ```ctx``` instead of ```ctx.users``` as shown in Video 18.3, step 2?
 
 
 
