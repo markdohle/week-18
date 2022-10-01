@@ -86,7 +86,7 @@ Why does the Home component stay when I click on the about link? It has to do wi
    </HashRouter>
    ```
    ```
-   ReactDom.render(
+   ReactDOM.render(
       <Spa/>,
       document.getElementById('root')
    )
@@ -203,6 +203,76 @@ Change ```<a class="nav-link active" href="#">Active</a>``` to ```<Link classNam
 <Nav/>
 ```
 3. The Spa component uses Link as a local variable. It is not available to the Nav component. Move the variables from inside the Spa function to outside of it in order make them globally accesable.
+
+### Video 18.5 - Bad Bank Exercise Overview
+
+In this video, detailed steps for creating an application called Bad Bank are covered. You will get the chance to practice and handle decisions related to routing, context, styles, components (including parent–child components), state, forms, and events.
+
+The application is designed with a container to hold the Nav bar component and the Home component. The components are styled for a pleasant user interface.
+
+1. Routing
+2. Context - How do decide when to use context?
+3. Styles - Bootstrap
+4. Comonents - Home, Create Accouint, Login, Deposit, Withdraw, Balance, All Data
+5. Parent-Child Components
+6. State - How do you choose where to keep state?
+7. Forms
+8. Handling events
+
+Create a path useing routing to navigate.
+
+Architecture with a global context.js that feeds the index.js and is shared by all child components. Then create a navbar.js that also feeds the index.js. The index.js then feeds each of the child components that each have their own .js file. Routing is used load and unload all the components including the navbar. The shared context is the state that is shared between the index.js and the child components, excluding the navbar.
+
+### Video 18.6 - Create Bad Bank Application Files
+
+Build one peice at a time, verify and then move forward. Create the files based on the architecture provide in Video 18.5 above. Define the 10 script files to be loaded in index.html.
+
+1. Create the index.html
+
+Reference video 18.2 above to add the following:
+
+Add title = Bad Bank
+
+Add the transpiler.
+
+Add the div to hold the react component id="root".
+
+Add the libraries for the router.
+
+Add script references for the 10 script files that will be created next.
+
+2. Goto the terminal to quickly create the script files.
+
+```touch context.js``` do this for the 9 script files.
+
+Video 18.7 - Band Bank Navigation Bar
+
+1. Create the navbar fuctional component with return tags. Wrap the paths in fragment, which is an empty tag.
+
+```
+<>
+</>
+```
+
+2. Enter the links. Why is this different than the links created in (Video 18-2, 1. Spa Component)?
+```
+    <a href="#">BadBank</a>,
+    <a href="#/CreateAccount/">Create Account</a>,
+    <a href="#/login/">Login</a>,
+    <a href="#/deposit/">Deposit</a>,
+    <a href="#/withdraw/">Withdraw</a>,
+    <a href="#/balance/">Balance</a>,
+    <a href="#/alldata/">AllData</a>
+ ```
+ 
+ 3. Write the parent component(Spa) in index.js. We are going to write our .jsx. Why is the file still a .js file? Wrap the paths in fragment, which is an empty tag as done in step 1 above. Add a header so we can verify that the page loads. Add a the NavBar component in the same as was performed in (Video 18.4, step 2). Finally, render the Spa component to the DOM in the same way as was done in (Video 18.2, step 1).
+
+
+
+
+
+
+
 
 
 
