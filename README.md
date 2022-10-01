@@ -35,6 +35,8 @@ Does the order of the script files referenced in the .html file matter? I get th
 
 ```Uncaught ReferenceError: NavBar is not defined```
 
+Follow the instructions below to iterate through the basics of routing, context, styles, parent–child components, tracking state, forms, and handling events. The instructions are meant to be followed in order, however the lessons build upon each other. Video's further down the list reference video's from earlier in the list. The idea is that you move two steps forward and one step back as you solve the problems from a slightly different angle. There might be mistakes in the code provided in the instructions, but this is always the case. You can figure it out by looking at the error messages in the console and making changes and re-reading the instructions.
+
 ### Video 18.1
 
 How do I provide a memory context for all of our screens? How do I set the context?
@@ -273,7 +275,7 @@ Video 18.7 - Band Bank Navigation Bar
  
  3. Write the parent component(Spa) in index.js. We are going to write our .jsx. Why is the file still a .js file? Wrap the paths in fragment, which is an empty tag as done in step 1 above. Add a header so we can verify that the page loads. Add a the NavBar component in the same as was performed in (Video 18.4, step 2). Finally, render the Spa component to the DOM in the same way as was done in (Video 18.2, step 1).
  
-### Video 18.7 - Band Bank Routing
+### Video 18.8 - Band Bank Routing
 
 Add the routing components to context.js. Leverage the components in index.js by defining the routing paths and mapping to the components.
 
@@ -284,6 +286,34 @@ Add the routing components to context.js. Leverage the components in index.js by
 3. Add the Rout paths inside the HashRouter tag. The default Route path is ```exact``` and points to the home component. Reference Video 18.2, step 1 for syntax. Add the rest of the NavBar Route path components without ```exact```.
 
 4. Create the components that are routed to the NavBar. Return the h1 tag. This is to verify that the NavBar and routing works. Don't forget to wrap in a fragment as shown in 18.7, step 1.
+
+### Video 18.9 - Bad Bank Context
+
+Within context.js, add context to be shared with your components. Then, within index.js, create your context provider tag which will take an initial value. Remember, the context comes with a provider that takes value and that value is passed to the other components.
+
+1. Add a UserContext component to context.js. The logic is provided by the react library which was previously added to the .html. Context object comes with a provider. What is a provider? The value is passed to consuming components. The initial value = null. The syntax is provided in Video 18.3, step 1.
+
+2. Add the tag for the UserContext component to index.js. Wrap the routes inside the UserContent component as shown in Video 18.3, step 1. Add the value as an expression{} and paste an object iside the expression. The object is provided below.
+
+Object property = users
+Object value = an ararry with one object with a bank user with 4 properties. These properties can be updated.
+
+```
+{
+  users:[
+    {
+      name:'abel',
+      email:'abel@mit.edu',
+      password:'secret',
+      balance:100
+    }
+  ]
+}
+```
+
+3. Access the shared content by each of the child components. Create the local variable to capture the context as shown in Video 18.3, step 2. Add the context to the return tag with a line break ```<br/>``` to separate the text of the context from the header text. Why is the JSON.stringify accessing ```ctx``` instead of ```ctx.users``` as shown in Video 18.3, step 2?
+
+
 
 
 
