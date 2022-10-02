@@ -295,9 +295,9 @@ Within context.js, add context to be shared with your components. Then, within i
 
 2. Add the tag for the UserContext component to index.js. Wrap the routes inside the UserContent component as shown in Video 18.3, step 1. Add the value as an expression{} and paste an object iside the expression. The object is provided below.
 
-Object property = users
+  Object property = users
 
-Object value = an ararry with one object with a bank user with 4 properties. These properties can be updated.
+  Object value = an ararry with one object with a bank user with 4 properties. These properties can be updated.
 
 ```
 {
