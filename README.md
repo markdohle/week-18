@@ -368,27 +368,25 @@ Use Boostrap for as an easy way to add styling.
 
 Add the Card component to content.js. Use the Bootstrap component called Card and conditional rendering. Instead of each card in the application being its own custom implementation, different parts of an application can reference an already made card component and customize the content inside with specific properties.
 
-Once you have a good template defined as a component, then you leverage that throughout the application.
-
-The Card component takes the (props) parameter.
-
 [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
 
-1. Return the syntax for the card. Make properties of a syntax component from the card component from Bootstrap. Pass aditional options for the class, a title for the card header, a card title. Use [Bootstrap colors](https://getbootstrap.com/docs/4.0/utilities/colors/) for the background.
+Use [Bootstrap colors](https://getbootstrap.com/docs/4.0/utilities/colors/) for the background.
 
-    Get the .html syntax from Bootstrap. Change class to className.
+Create a Card component that takes the (props) parameter. 
 
-    Wrapr the card with a div with 2 Expressions. Call classes which will be defined next. Set the style with a maximum width with an object.
+1. Return the tags for the card. Get the .html syntax from Bootstrap. Change class to className.
+
+    Wrap the card with a div with 2 Expressions. Call classes() function which will be defined in the Card component. Set the style with a maxWidth of "18rem" useing an object. What is "rem"?
     
-    Add card-header div. card-header has for the property of the header that shows in the DOM. The component that uses this card can pass this in.
+    Add card-header div. card-header has a property of the header that shows in the DOM. Each component that uses this card can pass this in through its header property.
     
-    Add card-body div. card-body has xxx properties; title, text, body, status. Use conditional return syntax to for their existance, otherwise don't show anything in the DOM. Reference the link above to understand how to use return coditionals.
+    Add card-body div. card-body has several properties that show in the DOM; title, text, body, status. Use conditional return syntax to for their existance, otherwise don't show anything in the DOM. Reference the link above to understand how to use return coditionals. Each component that uses this card can pass this in through its header property.
     
-    title is
+    title is text provided in the component that uses the card.
     
-    text is
+    text is text provided in the component that uses the card.
     
-    body is where each component adds the body of their content.
+    body is where each component adds the body of their content, which is an image in this case.
     
     status is used to notify and update the user interface when actions are taken.
     
