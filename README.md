@@ -414,6 +414,17 @@ Create a Card component that takes the (props) parameter.
     
     The body is an expression to present an image(<IMG). The IMG tag has an alt attribute to difine an alternate image as a default. The className is taken from Bootstrap for styling.
     
+```
+        <Card
+            bgcolor="primary"
+            txtcolor="black"
+            header="BadBank Landing Module"
+            title="Welcome to the bank"
+            text="Clear and round dealing is the honor of man's nature."
+            body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
+        />  
+```
+    
 
 
 
