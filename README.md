@@ -314,6 +314,114 @@ Within context.js, add context to be shared with your components. Then, within i
 
 3. Access the shared content by each of the child components. Create the local variable to capture the context as shown in Video 18.3, step 2. Add the context to the return inside the h1 tag with a line break ```<br/>``` to separate the text of the context from the header text. Why is the JSON.stringify accessing ```ctx``` instead of ```ctx.users``` as shown in Video 18.3, step 2?
 
+###Video 18.10 - Bad Bank - Styling the Navigation Bar
+
+Use Boostrap for as an easy way to add styling.
+
+1. Add Bootstrap style sheet to the index.html(Reference Video 18.4). Replace unstyled lists. The result is global styles that are available to all the components in the application. The code copied from Bootstrap has to be modified to work with the components. Also, wrap the links in an unordered list instead of the div. 
+
+```
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home 
+        <span class="sr-only">(current)</span>
+      </a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>
+```
+```
+<ul className="navbar-nav">
+  <li className="nav-item">
+    <a className="nav-link" href="#">Home</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#/createaccount/">Create Accout</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#/login/">Login</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#/deposite/">Deposit</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#/withdrawl/">Withdraw</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#/balance/">Balance</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="#/alldata/">All Data</a>
+  </li>
+  </ul>
+```
+
+###Video 18.11 - Bad Bank Stayling the Bootstrap Card
+
+Add the Card component to content.js. Use the Bootstrap component called Card and conditional rendering. Instead of each card in the application being its own custom implementation, different parts of an application can reference an already made card component and customize the content inside with specific properties.
+
+Once you have a good template defined as a component, then you leverage that throughout the application.
+
+The Card component takes the (props) parameter.
+
+[Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+
+1. Return the syntax for the card. Make properties of a syntax component from the card component from Bootstrap. Pass aditional options for the class, a title for the card header, a card title. Use [Bootstrap colors](https://getbootstrap.com/docs/4.0/utilities/colors/) for the background.
+
+    Get the .html syntax from Bootstrap. Change class to className.
+
+    Wrapr the card with a div with 2 Expressions. Call classes which will be defined next. Set the style with a maximum width with an object.
+    
+    Add card-header div. card-header has for the property of the header that shows in the DOM. The component that uses this card can pass this in.
+    
+    Add card-body div. card-body has xxx properties; title, text, body, status. Use conditional return syntax to for their existance, otherwise don't show anything in the DOM. Reference the link above to understand how to use return coditionals.
+    
+    title is
+    
+    text is
+    
+    body is where each component adds the body of their content.
+    
+    status is used to notify and update the user interface when actions are taken.
+    
+    ```
+    <div className={classes()} style={{maxWidth: "18rem"}}>
+        <div className="card-header">{props.header}</div>
+        <div className="card-body">
+          {props.title && (<h5 className="card-title">{props.title}</h5>)}
+          {props.text && (<p className="card-text">{props.text}</p>)}
+          {props.body}
+          {props.status && (<div id='createStatus'>{props.status}</div>)}
+        </div>
+      </div>    
+    ```
+2. Create the classes() function that is called and used by the card return tag. Check to see if the background color is set. If set, then choose it, other default with empty. Do the same with text, except the default is white. Return the background and text as the output.
+
+```
+      const bg  = props.bgcolor ? ' bg-' + props.bgcolor : ' ';
+      const txt = props.txtcolor ? ' text-' + props.txtcolor: ' text-white';
+      return 'card mb-3 ' + bg + txt;
+```
+3. Add the card to the components. Remove the testing syntax and replace it with the card.
+
+    Add the Card component tag with attaributes that are passed in as props. Use double quotes to wrap the attributes because that is the standard. The attributes are; bgcolor, textcolor, header, title, text, body,
+    
+    The body is an expression to present an image(<IMG). The IMG tag has an alt attribute to difine an alternate image as a default. The className is taken from Bootstrap for styling.
+    
+
+
+
+
+
+
 
 
 
