@@ -424,7 +424,14 @@ Create a Card component that takes the (props) parameter.
             body={(<img src="bank.png" className="img-fluid" alt="Responsive image"/>)}
         />  
 ```
-    
+
+### Video 18.12 - Bad Bank - Create Account
+
+Create an interactive form that captures user information to create a new account in the Bad Bank Application. This form should allow user inputs in the appropriate fields, validate the inputs, and store them in the React State. After following along with the video, add forms to:
+
+- Log into the application (checking if a user exists and if their password matches their username)
+- Deposit money into a specific account (adding to a user's balance)
+Withdrawing money from a specific account (subtracting from a user's balance)
 
 
 
