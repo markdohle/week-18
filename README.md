@@ -31,7 +31,7 @@ Use createRoot instead. Until you switch to the new API, your app will behave as
 Learn more: https://reactjs.org/link/switch-to-createroot
 ```
 
-Does the order of the script files referenced in the .html file matter? I get this error when the navbar.js is listed below the index.js. _F*****g annoying_, emphasis added because it keeps happening and need to remember this.
+Does the order of the script files referenced in the .html file matter? I get this error when the navbar.js is listed below the index.js. _F*****g annoying_, emphasis added because it keeps happening and I need to remember this.
 
 ```Uncaught ReferenceError: NavBar is not defined```
 
@@ -438,14 +438,16 @@ Add interactive forms to take information from the user, update state, update UI
 1. Code Blocks
 
 - State Variables: show, status, name, email, password, UserContext(Reference Video 18.4, step 2.)
-      ```
+
+  ```
       const [show, setShow]         = React.useState(true);
       const [status, setStatus]     = React.useState('');
       const [name, setName]         = React.useState('');
       const [email, setEmail]       = React.useState('');
       const [password, setPassword] = React.useState('');
       const ctx = React.useContext(UserContext);
-      ```
+  ```
+      
 - Show one form or another useing conditional logic. Is an additional user being created or is a user being added? 
     - Fields: styling, value, onChange event
     - Button: handle event
