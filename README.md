@@ -427,11 +427,157 @@ Create a Card component that takes the (props) parameter.
 
 ### Video 18.12 - Bad Bank - Create Account
 
-Create an interactive form that captures user information to create a new account in the Bad Bank Application. This form should allow user inputs in the appropriate fields, validate the inputs, and store them in the React State. After following along with the video, add forms to:
+Create an interactive form that captures user information to create a new account in the Bad Bank Application. This form should allow user inputs in the appropriate fields, validate the inputs, and store them in the React State.
+
+Add interactive forms to take information from the user, update state, update UI:
 
 - Log into the application (checking if a user exists and if their password matches their username)
 - Deposit money into a specific account (adding to a user's balance)
-Withdrawing money from a specific account (subtracting from a user's balance)
+- Withdrawing money from a specific account (subtracting from a user's balance)
+
+1. Code Blocks
+
+- State Variables: show, status, name, email, password, UserContext(Reference Video 18.4, step 2.)
+      ```
+      const [show, setShow]         = React.useState(true);
+      const [status, setStatus]     = React.useState('');
+      const [name, setName]         = React.useState('');
+      const [email, setEmail]       = React.useState('');
+      const [password, setPassword] = React.useState('');
+      const ctx = React.useContext(UserContext);
+      ```
+- Show one form or another useing conditional logic. Is an additional user being created or is a user being added? 
+    - Fields: styling, value, onChange event
+    - Button: handle event
+- Events: handleCreate, vlidate, clearform
+
+2. Return JSX tags. Add logic for Card component and inside set the properties of the CreateAccount component that are passed into the Card. Then the body that will hold the forms.
+- The status varies based on actions that are taken.
+- The body is the conditional expression to show the correct form.
+    - Create Account Form: The initial state of show is set to true. Use empty fragment to separate the forms. The onChange event is used to set the name, email, password. The button has an onClick event that triggers the handleCreate function.
+    - Create Another Account Form labeled "Success". Click on add another user which will call the clearForm function.
+```
+<Card
+      bgcolor="primary"
+      header="Create Account"
+      status={status}
+      body={show ? (  
+              <>
+              Name<br/>
+              <input
+                type="input"
+                className="form-control"
+                id="name"
+                placeholder="Enter name"
+                value={name}
+                onChange={e => setName(e.currentTarget.value)}
+                />
+                <br/>
+              Email address<br/>
+              <input
+                type="input"
+                className="form-control"
+                id="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={e => setEmail(e.currentTarget.value)}
+                />
+                <br/>
+              Password<br/>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={e => setPassword(e.currentTarget.value)}
+                />
+                <br/>
+              <button
+                type="submit"
+                className="btn btn-light"
+                onClick={handleCreate}
+                >Create Account
+              </button>
+              </>
+            ):(
+              <>
+              <h5>Success</h5>
+              <button
+                type="submit"
+                className="btn btn-light"
+                onClick={clearForm}
+                >Add another account
+              </button>
+              </>
+            )}
+/>
+```
+    
+3. handleCreate() function to pass the arguments for "field and label" to the validate() function. Then push the new user into the userContext wich has an initial value placed in index.js. setShow to false to hide the initial values.
+```
+    console.log(name,email,password);
+    if (!validate(name,     'name'))     return;
+    if (!validate(email,    'email'))    return;
+    if (!validate(password, 'password')) return;
+    ctx.users.push({name,email,password,balance:100});
+    setShow(false);
+```
+
+4. clearForm() function to reset the states to initial conditions.
+
+5. validate(field, label) function. Check for an empty field and set Timeout. If the field is empty, return false, otherwise return true.
+```
+    if (!field) {
+        setStatus('Error: ' + label);
+        setTimeout(() => setStatus(''),3000);
+        return false;
+      }
+      return true;
+```
+
+6. Add forms to the rest of the components.
+
+### Video 18.13 - Bad Bank Challenge
+
+Look for opportunities to improve the design of your application based on the platform's capabilities. How can you simplify it to achieve a cleaner look?
+
+Where is the work repeated? There is a lot of repeated work in forms. Create a form component that all the components can leverage. Use the component and only pass properties.
+
+Instead of handling all the events, just handle some of them and pass them to the form component.
+
+```
+function CreateAccount(){
+  const ctx = React.useContext(UserContext);
+
+  function handle (data){
+    ctx.users.push(
+      {
+        name:data.name,
+        email:data.email,
+        password:data.password,
+        balance:100
+      }
+    );
+    return true;
+  }
+  
+  return(
+    <BankForm
+      bgcolor="primary"
+      label="Create Account"
+      handle={handle}
+      hideAmount={true}
+      successButton="Add another account"
+    />
+  )
+}
+```
+
+  
+
+
+
 
 
 
